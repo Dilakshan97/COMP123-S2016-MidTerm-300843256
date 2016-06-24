@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+*Author:Dilakshan Packiyanathan
+* Student #: 300843256
+* Date: June 24th 2016
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,12 +24,74 @@ namespace COMP123_MidTermExam
     public abstract class LottoGame
     {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
+
         // CREATE private fields here --------------------------------------------
+        private int _elementNumber; 
+         private int _setSize; 
+         private Random _random; 
+         private List<int> _elementList = new List<int>(); 
+         private List<int> _numberList = new List<int>();
+
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
+
         // CREATE public properties here -----------------------------------------
+        public int ElementNumber 
+         { 
+             get 
+             { 
+                 return this._elementNumber; 
+             } 
+
+             set 
+             { 
+                 this._elementNumber = value; 
+             } 
+         } 
+ 
+ 
+         public List<int> ElementList
+         { 
+             get 
+             { 
+                 return this._elementList; 
+             } 
+         } 
+ 
+ 
+         public List<int> NumberList
+         { 
+             get 
+             { 
+                 return this._numberList; 
+             } 
+ 
+ 
+         } 
+ 
+ 
+         public Random random
+         { 
+             get 
+             { 
+                 return this._random; 
+             } 
+         } 
+ 
+ 
+         public int SetSize
+         { 
+             get 
+             { 
+                 return this._setSize; 
+              } 
+ 
+ 
+             set 
+             { 
+                 this._setSize = value; 
+             } 
+         } 
 
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -56,22 +124,30 @@ namespace COMP123_MidTermExam
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the private _initialize method here -----------------------------
+        private void _initialize()
+         {              
+         } 
 
         // CREATE the private _build method here -----------------------------------
+        private void _build()
+         { 
 
-        // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                     throw new System.NotImplementedException(); 
+         }
 
-        /**
-         * <summary>
-         * Override the default ToString function so that it displays the current
-         * ElementList
-         * </summary>
-         * 
-         * @override
-         * @method ToString
-         * @returns {string}
-         */
-        public override string ToString()
+    // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    /**
+     * <summary>
+     * Override the default ToString function so that it displays the current
+     * ElementList
+     * </summary>
+     * 
+     * @override
+     * @method ToString
+     * @returns {string}
+     */
+    public override string ToString()
         {
             // create a string variable named lottoNumberString and intialize it with the empty string
             string lottoNumberString = String.Empty;
@@ -84,6 +160,33 @@ namespace COMP123_MidTermExam
             }
 
             return lottoNumberString;
+        }
+
+        private void _build()
+        {
+            int[] SetSize = new int[49];
+            int maxNumber = 6;
+
+            for (int index = 0; index < maxNumber; index++)
+            {
+                int Number = random.Next(1, 50);
+                SetSize[Number]++;
+                _numberList.Add(Number);
+            }
+        }
+
+        private void _initialize()
+        {
+            List<int> _numberList = new List<int>();
+            List<int> _elementList = new List<int>();
+            Random random = new Random();
+
+        }
+
+        public void PickElements()
+        {
+
+
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

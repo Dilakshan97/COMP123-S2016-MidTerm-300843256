@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+*Author:Dilakshan Packiyanathan
+* Student #: 300843256
+* Date: June 24th 2016
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +32,7 @@ namespace COMP123_MidTermExam
          * @returns {void}
          */
         public static void Main(string[] args)
-        {     
+        {
             // Call the Menu
             LottoMenu();
         }
@@ -47,7 +53,7 @@ namespace COMP123_MidTermExam
             bool menuActive = true;
 
             // While the menu is active...loop
-            while(menuActive)
+            while (menuActive)
             {
                 // show options in the console menu
                 Console.WriteLine("++++++++++++++++++++++++++++++++");
@@ -85,7 +91,7 @@ namespace COMP123_MidTermExam
                         Console.Clear();
                         break;
                 }
-            }         
+            }
         }
     }
 }
